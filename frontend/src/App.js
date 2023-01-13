@@ -1,11 +1,11 @@
 
 import './App.css';
 import { useState } from 'react';
-import Search from './pages/Search/index.js.js';
+import Search from './pages/Search/index.js';
 import { Routes, Route, Link } from 'react-router-dom';
 import Nav from './components/Nav';
 import SignUp from './pages/SignUp';
-import Login from './pages/LogIn';
+import Login from './pages/Login';
 import Home from './pages/Home';
 
 

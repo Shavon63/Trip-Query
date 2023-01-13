@@ -6,9 +6,9 @@ const Search = () => {
     const [searchedPlace, setSearchedPlace] = useState([])
     const [searchString, setSearchString] = useState()
     
-    if (!searchedPlace.length) {
-      return <h2>No Results Found!</h2>
-    }
+    // if (!searchedPlace.length) {
+    //   return <h2>No Results Found!</h2>
+    // }
     return (
       <div className="gallery">
         <SearchForm searchedPlace={searchedPlace} setSearchedPlace={setSearchedPlace} searchString={searchString}/>
