@@ -7,6 +7,7 @@ const userdb = require('./models')
 //access user in controller
 const passport = require('./config/passport')()
 const userCtrl = require('./controllers/users')
+const axios = require("axios")
 
 //MW 
 
@@ -18,7 +19,14 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 // Use controllers for all other routes
-app.use("/user", userCtrl)
+app.use("/users", userCtrl)
+
+
+app.post("/maps", async (req, res)=> {
+    const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${req.body.searchString}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyBPFyfOvU96xoIgsYr5aN-ANWB-qihk2Uo`)
+    console.log(req.body)
+    res.json(data)
+})
 
 // `app.listen()` binds and listens for the connections on the specified host and port
 app.listen(process.env.PORT, () => {

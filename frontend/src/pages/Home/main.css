@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300&family=Orbitron&family=Syne+Mono&display=swap');
+
+.header-intro{
+    background-image: url(https://i.imgur.com/QZLuo6Q.jpg);
+    height: 400px;
+    background-position: center;
+}
+
+.header-intro-text{
+    font-family: 'Anton', sans-serif; 
+    font-size: 60px;
+    color: white;
+    
+}

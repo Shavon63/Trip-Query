@@ -1,27 +1,27 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getSearchData } from '../../utils/api';
+import axios from 'axios';
 
 
 
 
   // Destructure props object
-  function SearchForm({ searchString, setSearchedPlace, searchedPlace }) {
-    const [searchTerms, setSearchTerms] = useState({})
+  function SearchForm({ formData, setFormData, setSearchedPlace }) {
+    // const [formState, setFormState] = useState({})
 
 
         function handleChange(event){
-            setSearchTerms({ ...searchTerms, [event.target.id]: event.target.value})
+            setFormData({ ...formData, [event.target.name]: event.target.value})
+        
         }
-        // //function to retieve data from API
-        // useEffect(()=>{
-        //     getSearchData(data =>{setSearchedPlace(data)})
-        // }, [])
         
         
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault();
-            getSearchData(searchString); 
+            const {data} = await axios.post(`http://localhost:5002/maps`, formData)
+            setSearchedPlace = data.results
+
           }
     return (
       <form onSubmit={handleSubmit} className="form-horizontal">
@@ -31,7 +31,7 @@ import { getSearchData } from '../../utils/api';
           name="searchString"
           required
           onChange={handleChange}
-          value={searchString}
+          value={formData.searchString}
         />
         <button type="submit">Search</button>
       </form>

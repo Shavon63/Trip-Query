@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import "./main.css"
 
 
 
@@ -9,19 +10,27 @@ export default function Nav(props) {
     const [navItems, setNavItems] = useState(initialState)
     const [sendHome, setSendHome] = useState(false)
     
+
+    
     // a function that will send user home after logging out. 
-    function logOut(){
-        setSendHome(true)
-        if(sendHome === true){
-            <Navigate to="/"></Navigate>
-        }
-    }
+    // function logOut(){
+    //     setSendHome(true)
+    //     if(sendHome === true){
+    //         <Navigate to="/"></Navigate>
+    //     }
+    // }
 
     // log out the user when the "Log Out" button is pressed
     const handleLogOut = () => {
         localStorage.clear()
         props.setIsLoggedIn(false)
-        logOut()
+        props.setUser({})
+        setSendHome(true)
+        if(sendHome){
+            <Navigate to="/"></Navigate>
+        }
+        
+        
     }
 
     // add NavBar items to JSX array depending on App login state
@@ -30,7 +39,7 @@ export default function Nav(props) {
             setNavItems(initialState.concat(
                 <li key='2'><Link to='/Map'>Map</Link></li>,
                 <li key='3'><Link to='/search'>Search</Link></li>,
-                <li key='4'><button onClick={handleLogOut}>Log Out</button></li>,
+               <li key='4'><button onClick={handleLogOut}>Log Out</button></li>,
             ))
         } else {
             setNavItems(initialState.concat([

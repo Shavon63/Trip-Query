@@ -12,9 +12,9 @@ const User = db.User
 
 //ROUTES 
 
-// SIGN UP ROUTE (create user)
-router.post('/signup', async (req, res) => {
+router.post('/a', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
+    console.log(foundUser)
     if(!foundUser){
         const createdUser = await db.User.create(req.body)
         const payload = {id: createdUser._id}
@@ -27,7 +27,6 @@ router.post('/signup', async (req, res) => {
         res.sendStatus(401)
     }
   })
-
 
 router.post('/login', async (req, res) => {
     const foundUser = await User.findOne({ username: req.body.username })
@@ -55,7 +54,7 @@ router.get('/map/:id', async (req, res) => {
 })
 
 
-router.put('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const updateUser = await User.findByIdAndUpdate(
         req.params.id,  
         req.params.body,

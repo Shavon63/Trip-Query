@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import SearchForm from "../../components/SearchForm";
+import Places
 
-const Search = () => {
+
+const Search = ({}) => {
 
     const [searchedPlace, setSearchedPlace] = useState([])
-    const [searchString, setSearchString] = useState()
+    const [formData, setFormData] = useState({searchString: ""})
+    console.log(searchedPlace)
     
-    // if (!searchedPlace.length) {
-    //   return <h2>No Results Found!</h2>
-    // }
     return (
       <div className="gallery">
-        <SearchForm searchedPlace={searchedPlace} setSearchedPlace={setSearchedPlace} searchString={searchString}/>
-       {searchedPlace.map(searched => (
-  <figure key={searched.id} className="gif">
+        <SearchForm formData={formData} setFormData={setFormData} setSearchedPlace={setSearchedPlace}/>
+       {searchedPlace.map((searched, i) => (
+  <figure key={searched.id} className="searched-results">
     <img src={searched.photos} alt="business" />
 
     <figcaption>

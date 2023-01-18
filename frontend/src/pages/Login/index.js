@@ -1,34 +1,47 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { logIn } from '../../utils/api';
+import axios from 'axios';
 
-function Login() {
-  const initialState = { username: '', password: '' };
-  const [formState, setFormState] = useState(initialState);
+function Login({setIsLoggedIn}) {
+  const [formData, setFormData] = useState({ username: '', password: '' });
+  console.log(setIsLoggedIn)
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event){
     event.preventDefault();
-    // clear the form
-    setFormState(initialState);
+    // logIn(formState)
+    logIn(formData)
+    .then((data) => {
+      localStorage.token = data.token
+      setIsLoggedIn(true)
+
+  })
+    navigate("/")
+    
   };
+
+  
   // Note that we need to use `htmlFor` instead of `for` in JSX
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username:</label>
       <input
-        id="username"
         type="text"
+        name="username"
         onChange={handleChange}
-        value={formState.username}
+        value={formData.username}
       />
       <label htmlFor="password">Password:</label>
       <input
-        id="password"
         type="password"
+        name="password"
         onChange={handleChange}
-        value={formState.password}
+        value={formData.password}
       />
       <button type="submit">Login</button>
     </form>

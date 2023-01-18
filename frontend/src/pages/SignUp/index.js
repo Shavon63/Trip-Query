@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useEffect} from 'react';
-import { Navigate , useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import { formSubmit } from '../../utils/api';
 
-export default function SignUp({setIsLoggedIn, isLoggedIn}) {
+export default function SignUp({setIsLoggedIn, isLoggedIn, getUserData}) {
     // state declarations
     const initialState = {
         username: "",
@@ -21,17 +21,18 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
     
         async function handleSubmit(event) {
             event.preventDefault()
-            formSubmit(formState).then((data) => localStorage.token = data.token)
-            setIsLoggedIn(true)
+            formSubmit(formState).then((data => {
+                localStorage.token = data.token
+                setIsLoggedIn(true)
+
+            }))
+            
             navigate("/")
             }
         
-       
-        // useEffect(() => {  
-        //     if (isLoggedIn) {
-        //        < Navigate to="/"/>
-        //     }
-        //  }, [isLoggedIn])
+        
+
+
         return (
             <div className="containers">
                 <h2 className="heading">Sign Up</h2>
@@ -64,7 +65,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
                             value={formState.location} />
                     </div>
     
-                    <button type='submit' class="buttons" >Sign Up</button>
+                    <button type='submit' className="buttons" >Sign Up</button>
                 </form>
             </div>
         )
