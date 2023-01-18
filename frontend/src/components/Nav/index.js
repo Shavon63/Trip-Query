@@ -39,13 +39,14 @@ export default function Nav(props) {
             setNavItems(initialState.concat(
                 <li key='2'><Link to='/Map'>Map</Link></li>,
                 <li key='3'><Link to='/search'>Search</Link></li>,
-               <li key='4'><button onClick={handleLogOut}>Log Out</button></li>,
+                <li key='4'><Link to='/profile'>Profile</Link></li>,
+               <li key='5'><button onClick={handleLogOut}>Log Out</button></li>,
             ))
         } else {
             setNavItems(initialState.concat([
-                <li key='5'><Link to='/signup'>Sign Up</Link></li>,
-                <li key='6'><Link to='/login'>Log In</Link></li>,
-                <li key='7'><Link to='/search'>Search</Link></li>
+                <li key='6'><Link to='/signup'>Sign Up</Link></li>,
+                <li key='7'><Link to='/login'>Log In</Link></li>,
+                <li key='8'><Link to='/search'>Search</Link></li>
             ]))
         }
     }, [props.loggedIn])

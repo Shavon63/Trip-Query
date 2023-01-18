@@ -1,13 +1,13 @@
 import { useState , useEffect} from "react";
 import SearchForm from "../../components/SearchForm";
-import Places
+
 
 
 const Search = ({}) => {
 
     const [searchedPlace, setSearchedPlace] = useState([])
     const [formData, setFormData] = useState({searchString: ""})
-    console.log(searchedPlace)
+
     
     return (
       <div className="gallery">

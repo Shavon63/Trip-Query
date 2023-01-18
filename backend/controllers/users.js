@@ -12,7 +12,7 @@ const User = db.User
 
 //ROUTES 
 
-router.post('/a', async (req, res) => {
+router.post('/signup', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
     console.log(foundUser)
     if(!foundUser){
@@ -54,7 +54,7 @@ router.get('/map/:id', async (req, res) => {
 })
 
 
-router.get('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     const updateUser = await User.findByIdAndUpdate(
         req.params.id,  
         req.params.body,
@@ -73,7 +73,8 @@ router.get('/', async (req, res) => {
   })
 
 router.delete('/', async (req, res) => {
-    await User.findByIdAndDelete(req.params.id)
+    const decode = jwt.decode(token, config.jwtSecret)
+    await User.findByIdAndDelete(decode.id)
     res.json({status: 200})
 });
 

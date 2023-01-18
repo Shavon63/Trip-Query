@@ -1,12 +1,14 @@
 // dependencies
 import axios from "axios"
 
+const config = {
+    headers:{
+        'Authorization': localStorage.getItem('token')
+    }
+};
 
-//function to retieve data from API
-// export async function getSearchData(searchString){
-//     const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${searchString}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyBPFyfOvU96xoIgsYr5aN-ANWB-qihk2Uo`)
-//     return data
-// }
+
+
 
 // export async function getSearchData(formData){
 //     const {data} = await axios.post(`http://localhost:5002/maps`, formData)
@@ -14,9 +16,9 @@ import axios from "axios"
 // }
 
 
-// send a POST request to the /signup or /login endpoint
+// send a POST request to the /signup 
 export async function formSubmit(formData) {
-    const { data } = await axios.post('http://localhost:5002/users/a/', formData)
+    const { data } = await axios.post('http://localhost:5002/users/signup/', formData)
     return data
 }
 
@@ -28,8 +30,19 @@ export async function logIn(formData) {
 }
 
 // get user data if user is logged in
-export async function getUserData(userId) {
+export async function getUserData() {
     // hit the user show route
-    const { data } = await axios.get('http://localhost:5002/users/', + userId)
+    const { data } = await axios.get('http://localhost:5002/users/',  config)
     return data
 }
+
+export async function deleteUser(userId) {
+    const {data} = await axios.delete('http://localhost:5002/users/', userId, config)
+    return data
+}
+
+export async function updateUser(formData, userId){
+    const { data } = await axios.put(`http://localhost:5002/users/${userId}`,formData)
+return data
+}
+

@@ -6,9 +6,10 @@ import { formSubmit } from '../../utils/api';
 export default function SignUp({setIsLoggedIn, isLoggedIn, getUserData}) {
     // state declarations
     const initialState = {
+        fullname: "",
         username: "",
         password: "",
-        location: ""
+        location: "",
     }
 
     const [formState, setFormState] = useState(initialState)
@@ -36,8 +37,15 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, getUserData}) {
         return (
             <div className="containers">
                 <h2 className="heading">Sign Up</h2>
-    
                 <form onSubmit={handleSubmit}>
+                <div className="input-texts">
+                        <label htmlFor='fullname'>FullName</label>
+                        <input
+                            type='text'
+                            name='fullname'
+                            onChange={handleChange}
+                            value={formState.fullname} />
+                    </div>
                     <div className="input-texts">
                         <label htmlFor='username'>Username</label>
                         <input

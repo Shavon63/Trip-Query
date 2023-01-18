@@ -1,5 +1,5 @@
 import {useState, useMemo, useCallback, useRef, Component} from "react"
-import { GoogleMap, Marker, DirectionsRenderer, Circle, MarkerClusterer } from "@react-google-maps/api"
+import { Marker, DirectionsRenderer, Circle, MarkerClusterer } from "@react-google-maps/api"
 import GoogleMapReact from 'google-map-react'
 import React from "react"
 import Places from "../Places"
@@ -31,7 +31,7 @@ import "./main.css"
                 //api key neccessary for google maps to connect to app
                 bootstrapURLKeys={{key: process.env.REACT_APP_MAPS_API_KEY}}
                  defaultZoom={this.state.zoom} 
-                 defaultCenter = {{lat: 40.674, lng: -77.970}}  
+                 defaultCenter = {{lat: 40.674, lng: -77.9}}  
                  center={this.state.center} 
                  // this will keep the class state always changing with where the current place is
                  onChange={({center, zoom}) =>{this.setState({center: center, zoom:zoom})}}  mapContainerClassName="map-container" ></GoogleMapReact>

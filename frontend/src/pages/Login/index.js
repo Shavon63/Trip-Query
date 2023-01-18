@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../utils/api';
 import axios from 'axios';
 
-function Login({setIsLoggedIn}) {
+function Login({setIsLoggedIn, loggedIn}) {
   const [formData, setFormData] = useState({ username: '', password: '' });
   console.log(setIsLoggedIn)
   const navigate = useNavigate()
@@ -21,9 +21,15 @@ function Login({setIsLoggedIn}) {
       setIsLoggedIn(true)
 
   })
-    navigate("/")
+    // navigate("/")
     
   };
+
+  useEffect(() => {
+    if (loggedIn) {
+        navigate('/Profile')
+    }
+}, [loggedIn])
 
   
   // Note that we need to use `htmlFor` instead of `for` in JSX
