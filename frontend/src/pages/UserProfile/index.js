@@ -1,49 +1,46 @@
 import { useEffect, useState } from "react"
-import { getUserData, updateUser } from "../../utils/api"
+import { deleteUsers, updateUser } from "../../utils/api"
 import axios from "axios";
 import "./main.css"
 import { useNavigate } from "react-router-dom";
 
 export default function UserProfile(props){
     const [showForm, setShowForm] = useState(false)
-    const [formData, SetFormData] = useState({
+    const [formData, setFormData] = useState({
         fullname: " ",
         username: " ",
         password: " ",
-        location: " ",
+        location: " "
 
     })
-    const [userInfo, setUserInfo] = useState({})
+    const [userInfo, setUserInfo] = useState(props.user)
     const navigate= useNavigate()
 
-    useEffect(()=>{
-        SetFormData(props.user)
-        console.log(formData)
-    },[])
 
     function toggleEditForm(){
         setShowForm(!showForm)
     }
     function handleChange(event){
-        SetFormData({...formData, [event.target.name]: event.target.value} )
-        console.log(formData)
+        setFormData({...formData, [event.target.name]: event.target.value} )
     }
-    
+    let garbage = 44
     
     function deleteUser() {
-        
-        deleteUser()
-        localStorage.clear()
-        props.setIsLoggedIn (false)
-        navigate("/")
+        deleteUsers()
+        .then((data)=>{ 
+            garbage = data
+            localStorage.clear()
+            props.setIsLoggedIn(false)
+            navigate("/")
+        })
     } 
     function handleSubmit(event){
         event.preventDefault()
-        updateUser(formData, props.user._id)
+        updateUser(props.user._id, formData)
         .then((data)=> {
         setUserInfo(data)
+        localStorage.token = data.token
         setShowForm(false)
-        console.log(userInfo)
     })
     }
 
@@ -59,7 +56,7 @@ export default function UserProfile(props){
                 <h2>Would You Like To Explore {props.user.location}</h2>
                 <div className="button-container">
                 <button className="button-item" onClick={toggleEditForm}>Update User Info</button>
-                <button className="deleteBtn" onClick={()=> deleteUser()} > Delete Account</button>
+                <button className="deleteBtn" onClick={deleteUser} > Delete Account</button>
                 </div>
             </div>
             {
@@ -80,6 +77,14 @@ export default function UserProfile(props){
                             name='username'
                             onChange={handleChange}
                             value={formData.username} />
+                    </div>
+                    <div className="input-texts">
+                        <label htmlFor='password'>Password</label>
+                        <input
+                            type='text'
+                            name='password'
+                            onChange={handleChange}
+                            value={formData.password} />
                     </div>
     
                     <div className="input-texts">

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../utils/api';
-import axios from 'axios';
+
 
 function Login({setIsLoggedIn, loggedIn}) {
   const [formData, setFormData] = useState({ username: '', password: '' });
-  console.log(setIsLoggedIn)
   const navigate = useNavigate()
 
   const handleChange = (event) => {
@@ -21,12 +20,11 @@ function Login({setIsLoggedIn, loggedIn}) {
       setIsLoggedIn(true)
 
   })
-    // navigate("/")
     
   };
 
   useEffect(() => {
-    if (loggedIn) {
+    if (localStorage.token) {
         navigate('/Profile')
     }
 }, [loggedIn])

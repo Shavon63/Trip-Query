@@ -53,7 +53,7 @@ export default function Nav(props) {
 
     // render JSX
     return (
-        <nav>
+        <nav className='nav-container'>
             <div className="nav-wrapper">
                 <Link to="/" className="brand-logo">Travel Query</Link>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">

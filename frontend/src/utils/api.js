@@ -9,13 +9,6 @@ const config = {
 
 
 
-
-// export async function getSearchData(formData){
-//     const {data} = await axios.post(`http://localhost:5002/maps`, formData)
-//     return data
-// }
-
-
 // send a POST request to the /signup 
 export async function formSubmit(formData) {
     const { data } = await axios.post('http://localhost:5002/users/signup/', formData)
@@ -36,13 +29,13 @@ export async function getUserData() {
     return data
 }
 
-export async function deleteUser(userId) {
-    const {data} = await axios.delete('http://localhost:5002/users/', userId, config)
+export async function deleteUsers() {
+    const {data} = await axios.delete('http://localhost:5002/users/', config)
     return data
 }
 
-export async function updateUser(formData, userId){
-    const { data } = await axios.put(`http://localhost:5002/users/${userId}`,formData)
+export async function updateUser(userId, formData){
+    const { data } = await axios.put('http://localhost:5002/users/' + userId, formData)
 return data
 }
 

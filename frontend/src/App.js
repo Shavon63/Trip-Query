@@ -24,13 +24,12 @@ function App() {
   useEffect(() => {
     if (localStorage.token) {
         setIsLoggedIn(true)
-        // get user data
         getUserData()
         .then((data) => {
           setUser(data)
         })
     }
-}, [loggedIn])
+}, [])
 
 
   return (

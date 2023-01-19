@@ -1,3 +1,11 @@
+.nav-container{
+    border-radius: 5px;
+    border-color: rgb(9, 147, 234);
+    border-width: 4px;
+    border-style: solid;
+
+}
+
 ul{
     list-style: none;
     display: flex;
