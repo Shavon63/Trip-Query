@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect} from 'react';
 import {useNavigate} from "react-router-dom"
 import { formSubmit } from '../../utils/api';
+import { motion } from 'framer-motion';
 import './signup.css';
 
 export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
@@ -14,7 +15,9 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
     }
 
     const [formState, setFormState] = useState(initialState)
-     const navigate = useNavigate()
+    const [buttonClicked, setButtonClicked] = useState(false)
+    const navigate = useNavigate()
+     
 
         // update the input value as a user types
         const handleChange = (event) => {
@@ -29,14 +32,27 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
 
             }))
             
-            navigate("/")
+            // navigate("/")
             }
         
         
-
+        function motionButton(){
+            setButtonClicked(!buttonClicked)
+        }
 
         return (
-<div className="signup-container">
+            <div>
+                <motion.div
+animate={{ scale: buttonClicked ? 1 : 0 }} 
+initial={{scale: 0}}
+transition={{delay: 1 }}
+
+>
+    <h2 className='logged-in'>Thank You For Signing Up</h2>
+    <h3 className='logged-in-h3'>Auto Logged In</h3>
+</motion.div>
+<motion.div className="signup-container" 
+animate={{x: buttonClicked ? 1500 : null, scale: 1}} >
             <div className='form-pic-container'>
                     <form onSubmit={handleSubmit}>
                     {/* username input */}
@@ -106,7 +122,7 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
                     </div>
 
                     {/* <!-- Submit button --> */}
-                    <button type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
+                    <button type="submit" className="btn btn-primary btn-block mb-4" onClick={motionButton}>Sign in</button>
 
                     {/* <!-- Register buttons --> */}
                     <div className="text-center">
@@ -118,6 +134,7 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
                 </div>   
             </div>
             
+</motion.div>
 </div>
         )
 

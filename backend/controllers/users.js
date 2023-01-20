@@ -24,6 +24,7 @@ router.post('/signup', async (req, res) => {
             token: token
         })
     } else {
+        alert("user already exists")
         res.sendStatus(401)
     }
   })
@@ -38,17 +39,19 @@ router.post('/login', async (req, res) => {
             user: foundUser
         })
     } else {
+        alert("user not found")
       res.sendStatus(401)
     }
 })
 
 
 // GET USER DATA (if user is logged in)
-router.get('/map/:id', async (req, res) => {
+router.get('/map/', async (req, res) => {
     const foundUser = await db.User.findById(req.params.id)
     if (foundUser) {
         res.json(foundUser)
     } else {
+        alert("could not find user")
         res.sendStatus(404)
     }
 })

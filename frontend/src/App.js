@@ -9,9 +9,11 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Map from './pages/Map';
 import { getUserData } from './utils/api';
-import UserProfile from './pages/UserProfile';
+import UserProfile from './pages/Account';
 import axios from 'axios';
 import SignUpForm from './pages/SignUp/iindex';
+import Account from './pages/Account';
+import Error from './pages/Error';
 
 
 
@@ -42,8 +44,9 @@ function App() {
         <Route path="/login" element={<Login loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
         <Route path="/search" element ={<Search/>} />
         <Route path="/map" element ={<Map/>} />
-        <Route path="/profile" element ={<UserProfile user={user} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/account" element ={<Account user={user} setIsLoggedIn={setIsLoggedIn}/>}/>
 
+        <Route path="/*" element={<Error/>}/>
 
      </Routes>
     </div>

@@ -6,7 +6,7 @@ import "./main.css"
 
 export default function Nav(props) {
     // state declaration: build JSX array of NavBar items
-    const initialState = [<li key='1'><Link to='/'>Home</Link></li>]
+    const initialState = [<Link to='/'><li className='nav-item' key='1'>Home</li></Link>]
     const [navItems, setNavItems] = useState(initialState)
     const [sendHome, setSendHome] = useState(false)
     
@@ -37,16 +37,16 @@ export default function Nav(props) {
     useEffect(() => {
         if (props.loggedIn) {
             setNavItems(initialState.concat(
-                <li key='2'><Link to='/Map'>Map</Link></li>,
-                <li key='3'><Link to='/search'>Search</Link></li>,
-                <li key='4'><Link to='/profile'>Profile</Link></li>,
-               <li key='5'><button className="delete-button" onClick={handleLogOut}>Log Out</button></li>,
+                <Link to='/Map'><li className='nav-item' key='2'>Map</li></Link>,
+                <Link to='/search'><li className='nav-item' key='3'>Search</li></Link>,
+                <Link to='/account'><li className='nav-item' key='4'>Account</li></Link>,
+               <button className="delete-button" onClick={handleLogOut}><li key='5'>Log Out</li></button>,
             ))
         } else {
             setNavItems(initialState.concat([
-                <li key='6'><Link to='/signup'>Sign Up</Link></li>,
-                <li key='7'><Link to='/login'>Log In</Link></li>,
-                <li key='8'><Link to='/search'>Search</Link></li>
+                <Link to='/signup'><li className='nav-item' key='6'>Sign Up</li></Link>,
+                <Link to='/login'><li className='nav-item' key='7'>Log In</li></Link>,
+                <Link to='/search'><li className='nav-item' key='8'>Search</li></Link>
             ]))
         }
     }, [props.loggedIn])
