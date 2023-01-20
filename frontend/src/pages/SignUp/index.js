@@ -52,7 +52,7 @@ transition={{delay: 1 }}
     <h3 className='logged-in-h3'>Auto Logged In</h3>
 </motion.div>
 <motion.div className="signup-container" 
-// animate={{x: buttonClicked ? 1500 : null, scale: 1}}          
+animate={{x: buttonClicked ? 1500 : null, scale: 1}}          
 
 >
             <div className='form-pic-container'>
