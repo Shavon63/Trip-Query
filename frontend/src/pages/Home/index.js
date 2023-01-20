@@ -24,9 +24,17 @@ const [move, setMove] = useState(false)
 
                 </div>
             </div>
-            <div className="community-container">
-                <article className="item-one">yoo</article>
-            </div>
+            <div className="container-text-center">
+  <div className="row">
+    <div className="col-lg" id="item-one">col-sm</div>
+    <div className="col-lg">col-sm</div>
+  </div>
+  <div className="row">
+    <div className="col-lg">col-sm</div>
+    <div className="col-lg">col-sm</div>
+    <div className="col-lg">col-sm</div>
+  </div>
+</div>
         </div>
     )
 }

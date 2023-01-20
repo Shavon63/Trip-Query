@@ -11,7 +11,7 @@ import Map from './pages/Map';
 import { getUserData } from './utils/api';
 import UserProfile from './pages/Account';
 import axios from 'axios';
-import SignUpForm from './pages/SignUp/iindex';
+import SignUpForm from './pages/SignUp/index';
 import Account from './pages/Account';
 import Error from './pages/Error';
 

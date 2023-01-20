@@ -8,6 +8,7 @@ const userdb = require('./models')
 const passport = require('./config/passport')()
 const userCtrl = require('./controllers/users')
 const axios = require("axios")
+const path = require("path")
 
 //MW 
 
@@ -20,7 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 // Use controllers for all other routes
 app.use("/users", userCtrl)
+// use the React build folder for static files
+app.use(express.static(path.join(path.dirname(__dirname), "frontend", "build")))
 
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), "frontend", "build", "index.html"));
+});
 
 app.post("/maps", async (req, res)=> {
     const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=${req.body.searchString}&types=establishment&location=40.76999,-74.44696&radius=500&key=AIzaSyBPFyfOvU96xoIgsYr5aN-ANWB-qihk2Uo`)

@@ -31,7 +31,7 @@ span{
     margin-right: auto;
     
 }
-.item-one{
+#item-one{
     background-image: url("https://i.imgur.com/yiPE7nD.jpg");
     width: 600px;
     height: 300px;
