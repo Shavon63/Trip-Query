@@ -1,16 +1,32 @@
 import "./main.css"
+import {motion} from "framer-motion"
+import React, { useState } from "react"
 
 export default function Home(){
   
 
-
+const letsGo = "NYC".split("")
+const [move, setMove] = useState(false)
     return (
         <div>
-            <header>
+            <div>
                 <div className="header-intro">
-                    <h2 className="header-intro-text">Find Locations In Seconds</h2>
+                    <h4 className="signature">Stay Connected</h4>
+                    <h1 className="header"><span>E</span>xplore <span>Y</span>our <span>C</span>ommunity</h1>
+                    <button className="signup-link">Sign Up</button>
+                    <motion.div 
+                    animate={{x: 500, scale: 1}} 
+                    initial={{x:-500,scale: 0.1}}
+                    transition={{type: "tween", duration: 3 }}
+                    >
+                    <img src="https://i.imgur.com/lGsQmuS.png" alt="cab-icon"></img>
+                    </motion.div>
+
                 </div>
-            </header>
+            </div>
+            <div className="community-container">
+                <article className="item-one">yoo</article>
+            </div>
         </div>
     )
 }

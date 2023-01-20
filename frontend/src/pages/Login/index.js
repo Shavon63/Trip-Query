@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../utils/api';
 
 
-function Login({setIsLoggedIn, loggedIn}) {
+function Login({setIsLoggedIn, loggedIn, setUser}) {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const navigate = useNavigate()
 
@@ -18,6 +18,7 @@ function Login({setIsLoggedIn, loggedIn}) {
     .then((data) => {
       localStorage.token = data.token
       setIsLoggedIn(true)
+      setUser(data.user)
 
   })
     

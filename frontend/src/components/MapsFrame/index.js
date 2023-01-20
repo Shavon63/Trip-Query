@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react'
 import React from "react"
 import Places from "../Places"
 import Distances from "../Distances"
-import "./main.css"
+import "./maps.css"
 
 
 export default function Maps(){
@@ -16,7 +16,7 @@ export default function Maps(){
     //to disable the icons on the map that will come up when zooming in
     const options = useMemo(()=>({
         // mapId was fetched from google from customized map
-        mapID: "1b0e466924e615a1",
+        mapID: "9223f86a903aea2a",
         disableDefaultUI: true, 
         clickableIcons: false,
 
@@ -26,10 +26,17 @@ export default function Maps(){
     // react function call back to create a function that can transfer data
     // once loaded the mapref will show its current state
     const loaded = useCallback(map => (mapRef.current = map), [])
+    // ability to set a location 
+    const [location, setLocation] = useState()
     return(
-        <div className="container">
+        <div className="container-map">
             <div className="controls">
                 <h1>commute?</h1>
+                {/* more than updating a certain position this will move the map to that state */}
+                <Places setLocation={(position)=>{
+                    setLocation(position)
+                    mapRef.current?.panTo(position)
+                }}/>
             </div>
             <div className="map">
                 <GoogleMapReact 

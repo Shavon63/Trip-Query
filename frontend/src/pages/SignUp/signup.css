@@ -1,0 +1,35 @@
+.signup-container{
+    background-color: aliceblue;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+
+}
+input{
+    width: 300px;
+    margin: 10px;
+    height: 20px;
+    
+}
+
+.storefront{
+    height: 500px;
+    
+}
+.form-pic-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.heading{
+    position: relative;
+}
+form{
+    margin-top: 50px;
+}
+.btn {
+    background-color: rgb(255, 0, 0);
+    border-radius: 4px;
+    width: 150px;
+    margin-left: 75px;
+}

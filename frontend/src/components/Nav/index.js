@@ -40,7 +40,7 @@ export default function Nav(props) {
                 <li key='2'><Link to='/Map'>Map</Link></li>,
                 <li key='3'><Link to='/search'>Search</Link></li>,
                 <li key='4'><Link to='/profile'>Profile</Link></li>,
-               <li key='5'><button onClick={handleLogOut}>Log Out</button></li>,
+               <li key='5'><button className="delete-button" onClick={handleLogOut}>Log Out</button></li>,
             ))
         } else {
             setNavItems(initialState.concat([

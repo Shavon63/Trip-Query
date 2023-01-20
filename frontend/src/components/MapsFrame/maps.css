@@ -1,0 +1,16 @@
+.container-map{
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    margin: auto;
+    margin-top: 80px;
+    box-shadow: 3px 3px 3px ;
+}
+
+.map{
+    width: 80%;
+}
+.controls{
+    width: 20%;
+    background-color: blanchedalmond;
+}

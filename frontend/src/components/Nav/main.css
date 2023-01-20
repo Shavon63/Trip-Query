@@ -3,6 +3,10 @@
     border-color: rgb(9, 147, 234);
     border-width: 4px;
     border-style: solid;
+    width: 90%;
+    margin: auto;
+    box-shadow: 5px 5px 5px;
+    
 
 }
 
@@ -15,6 +19,9 @@ ul{
 li {
     display: inline;
     margin-right: 30px;
+    text-decoration: none;
     
-
+}
+.delete-button{
+    background-color: red;
 }

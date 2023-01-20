@@ -11,6 +11,7 @@ import Map from './pages/Map';
 import { getUserData } from './utils/api';
 import UserProfile from './pages/UserProfile';
 import axios from 'axios';
+import SignUpForm from './pages/SignUp/iindex';
 
 
 
@@ -37,8 +38,8 @@ function App() {
       <Nav loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/signup" element={<SignUp loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path="/login" element={<Login loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} />}/>
+        <Route path="/signup" element={<SignUpForm loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/login" element={<Login loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
         <Route path="/search" element ={<Search/>} />
         <Route path="/map" element ={<Map/>} />
         <Route path="/profile" element ={<UserProfile user={user} setIsLoggedIn={setIsLoggedIn}/>}/>

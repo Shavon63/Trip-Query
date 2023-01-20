@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { deleteUsers, updateUser } from "../../utils/api"
 import axios from "axios";
-import "./main.css"
+import "./profile.css"
 import { useNavigate } from "react-router-dom";
 
 export default function UserProfile(props){
