@@ -1,5 +1,4 @@
 import {useState, useMemo, useCallback, useRef} from "react"
-import {GoogleMap, Marker, DirectionsRenderer, Circle, MarkerClusterer } from "@react-google-maps/api"
 import GoogleMapReact from 'google-map-react'
 import React from "react"
 import Places from "../Places"
