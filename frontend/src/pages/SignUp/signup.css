@@ -9,7 +9,7 @@
 }
 input{
     width: 300px;
-    margin: 10px;
+    /* margin: 10px; */
     height: 20px;
     
 }
@@ -27,7 +27,7 @@ input{
     position: relative;
 }
 form{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .btn {
     background-color: rgb(255, 0, 0);
