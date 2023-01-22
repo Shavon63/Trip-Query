@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { deleteUsers, updateUser } from "../../utils/api"
-import axios from "axios";
 import "./profile.css"
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export default function Account(props, user){
+export default function Account(props){
     const [showForm, setShowForm] = useState(false)
     const [formData, setFormData] = useState({
         fullname: " ",

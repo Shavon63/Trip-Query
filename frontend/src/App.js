@@ -2,15 +2,12 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Search from './pages/Search/index.js';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Map from './pages/Map';
 import { getUserData } from './utils/api';
-import UserProfile from './pages/Account';
-import axios from 'axios';
 import SignUpForm from './pages/SignUp/index';
 import Account from './pages/Account';
 import Error from './pages/Error';

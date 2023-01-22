@@ -13,7 +13,7 @@ export default function Map(){
     // loading ... will show 
     if(!isLoaded) 
     return(
-        <h3>Loadinng...</h3>
+        <h3>Loading...</h3>
     )
 
 

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useEffect} from 'react';
 import {useNavigate} from "react-router-dom"
 import { formSubmit } from '../../utils/api';
 import { motion } from 'framer-motion';
@@ -32,7 +31,7 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
 
             }))
             
-            // navigate("/")
+            navigate("/")
             }
         
         
@@ -42,14 +41,14 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
 
         return (
             <div>
-                <motion.div
+                <div
 animate={{ scale: buttonClicked ? 1 : 0 }} 
 initial={{scale: 0}}
 transition={{delay: 1 }}
 
 >
     <h2 className='logged-in'>Thank You For Signing Up</h2>
-</motion.div>
+</div>
 <motion.div className="signup-container" 
 animate={{x: buttonClicked ? 1500 : null, scale: 1}}>
             <div className='form-pic-container'>

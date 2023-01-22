@@ -1,9 +1,9 @@
-import { useState , useEffect} from "react";
+import { useState } from "react";
 import SearchForm from "../../components/SearchForm";
 
 
 
-const Search = ({}) => {
+const Search = () => {
 
     const [searchedPlace, setSearchedPlace] = useState([])
     const [formData, setFormData] = useState({searchString: ""})

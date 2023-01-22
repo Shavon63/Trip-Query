@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { getSearchData } from '../../utils/api';
 import axios from 'axios';
 
 
