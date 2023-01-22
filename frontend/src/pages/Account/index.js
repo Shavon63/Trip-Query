@@ -56,7 +56,7 @@ export default function Account(props){
                 <div className="container">
                     <div className="user-info">
                         <h1 className="user-name">Welcome {props.user.username}</h1>
-                        <h2>Let's Explore {props.user.location} Together</h2>
+                        <h2 className="user-location">Let's Explore {props.user.location} Together</h2>
                         <div className="button-container">
                         <button className="button-item" onClick={toggleEditForm}>Update User Info</button>
                         <button className="deleteBtn" onClick={deleteUser} > Delete Account</button>
@@ -66,17 +66,17 @@ export default function Account(props){
                         showForm ?
                     <form className="account-form" onSubmit={handleSubmit}>
                         <div className="input-texts">
-                                <label htmlFor='fullname'>Full Name</label>
+                                <label htmlFor='fullname'></label>
                                 <input
                                     type='text'
                                     name='fullname'
                                     onChange={handleChange}
                                     value={formData.fullname}
-                                    placeholder="Full Name"
+                                    placeholder='Full Name'
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='username'>Username</label>
+                                <label htmlFor='username'></label>
                                 <input
                                     type='text'
                                     name='username'
@@ -86,7 +86,7 @@ export default function Account(props){
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='password'>Password</label>
+                                <label htmlFor='password'></label>
                                 <input
                                     type='text'
                                     name='password'
@@ -97,7 +97,7 @@ export default function Account(props){
                             </div>
             
                             <div className="input-texts">
-                                <label htmlFor='location'>Location</label>
+                                <label htmlFor='location'></label>
                                 <input
                                     placeholder = "Location"
                                     type='text'

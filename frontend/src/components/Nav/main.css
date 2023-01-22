@@ -36,9 +36,11 @@ Link{
     width: 600px
 }
 
-@media (max-width: 500) {
+@media (max-width: 500px) {
     .nav-container{
-        width: 200px;
+        width: 300px;
+        height: 100px;
+        margin: auto;
     }
     .nav-item{
         width: 20px;
@@ -48,9 +50,10 @@ Link{
     }
 }
 
-@media (min-width: 600) {
+@media (min-width: 500px) {
     .nav-container{
         width: 80%;
+        margin: auto;
     }
     .nav-item{
         width: 25px;
@@ -60,9 +63,10 @@ Link{
     }
 }
 
-@media (min-width: 100) {
+@media (min-width: 1000px) {
     .nav-container{
         width: 90%;
+        margin: auto;
     }
     .nav-item{
         width: 30px;

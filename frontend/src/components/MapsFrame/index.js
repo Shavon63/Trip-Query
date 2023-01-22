@@ -30,7 +30,7 @@ export default function Maps(){
     return(
         <div className="container-map">
             <div className="controls">
-                <h1>commute?</h1>
+                <h1 className="commute">commute?</h1>
                 {/* more than updating a certain position this will move the map to that state */}
                 <Places setLocation={(position)=>{
                     setLocation(position)

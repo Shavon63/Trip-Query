@@ -1,7 +1,7 @@
 .container-map{
     display: flex;
     width: 80%;
-    height: 90vh;
+    height: 80vh;
     margin: auto;
     margin-top: 80px;
     box-shadow: 3px 3px 3px ;
@@ -10,7 +10,45 @@
 .map{
     width: 80%;
 }
+
 .controls{
     width: 20%;
     background-color: blanchedalmond;
+}
+
+@media (max-width: 500px) {
+    .container-map{
+        height: 45vh;
+
+    }
+    .commute{
+        font-size: 15px;
+    }
+}
+@media (min-width: 500px) {
+    .container-map{
+        height: 45vh;
+
+    }
+    .commute{
+        font-size: 17px;
+    }
+}
+@media (min-width: 800px) {
+    .container-map{
+        height: 60vh;
+
+    }
+    .commute{
+        font-size: 17px;
+    }
+}
+@media (min-width: 1100px) {
+    .container-map{
+        height: 80vh;
+
+    }
+    .commute{
+        font-size: 25px;
+    }
 }

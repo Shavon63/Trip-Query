@@ -45,16 +45,6 @@ router.post('/login', async (req, res) => {
 })
 
 
-// GET USER DATA (if user is logged in)
-router.get('/map/', async (req, res) => {
-    const foundUser = await db.User.findById(req.params.id)
-    if (foundUser) {
-        res.json(foundUser)
-    } else {
-        alert("could not find user")
-        res.sendStatus(404)
-    }
-})
 
 
 router.put('/:id', async (req, res) => {

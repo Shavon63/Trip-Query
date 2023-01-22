@@ -41,16 +41,10 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
 
         return (
             <div>
-                <div
-animate={{ scale: buttonClicked ? 1 : 0 }} 
-initial={{scale: 0}}
-transition={{delay: 1 }}
-
->
-    <h2 className='logged-in'>Thank You For Signing Up</h2>
-</div>
 <motion.div className="signup-container" 
-animate={{x: buttonClicked ? 1500 : null, scale: 1}}>
+ animate={{y: 0}} 
+ initial={{y:700}}
+ transition={{type: "tween", duration: 1.5 }}>
             <div className='form-pic-container'>
                     <form onSubmit={handleSubmit}>
                     {/* username input */}
@@ -120,7 +114,7 @@ animate={{x: buttonClicked ? 1500 : null, scale: 1}}>
                     </div>
 
                     {/* <!-- Submit button --> */}
-                    <button type="submit" className="btn btn-primary btn-block mb-4" onClick={motionButton}>Sign in</button>
+                    <button type="submit" className="btn btn-primary btn-block mb-4" onClick={motionButton}>Sign up</button>
 
                     {/* <!-- Register buttons --> */}
                     <div className="text-center">
@@ -129,6 +123,7 @@ animate={{x: buttonClicked ? 1500 : null, scale: 1}}>
                     </form>
                 <div className='sign-up-photo'>
                     <img src='../../assets/images/storefront.jpg' alt="storefront" className="storefront"/>
+        
                 </div>   
             </div>
             
