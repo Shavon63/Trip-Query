@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300&family=Orbitron&family=Syne+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Manrope:wght@300&family=Orbitron&family=Syne+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Manrope:wght@300&family=Orbitron&family=Playfair+Display&family=Syne+Mono&display=swap');
+.body{
+    overflow-y: visible;
+}
 .header-intro{
     text-align: center;
 } 
@@ -31,8 +32,71 @@ span{
     margin-right: auto;
     
 }
+
+.container-text-center{
+    width: 80%;
+    margin: auto;
+}
+
+
 #item-one{
     background-image: url("https://i.imgur.com/yiPE7nD.jpg");
-    width: 600px;
     height: 300px;
+    box-shadow: 4px 4px 4px;
+    padding-left: 20px;
+    margin: 15px;
+}
+.item-one-info{
+    font-size: 20px;
+    width: 300px;
+    background-color: aliceblue;
+    font-family: 'Playfair Display', serif;
+}
+
+#item-two{
+    background-image: url('https://i.imgur.com/nStjDVA.jpg');
+    height: 300px;
+    box-shadow: 4px 4px 4px;
+    padding-right: 20px;
+    margin: 15px;
+}
+.item-two-info{
+    font-size: 20px;
+    width: 300px;
+    background-color: aliceblue;
+    font-family: 'Playfair Display', serif;
+}
+
+#item-4{
+    background-image: url("https://i.imgur.com/fBCiZUJ.jpg");
+    background-position: center;
+    height: 300px;
+    box-shadow: 4px 4px 4px;
+    padding-right: 20px;
+    margin: 15px;
+}
+.item-four-info{
+    font-size: 20px;
+    width: 300px;
+    background-color: aliceblue;
+    font-family: 'Playfair Display', serif;
+}
+#item-5{
+    background-image: url("https://i.imgur.com/EuzRxvs.jpg");
+    background-position: center;
+    height: 300px;
+    box-shadow: 4px 4px 4px;
+    padding-right: 20px;
+    margin: 15px;
+}
+.item-five-info{
+    font-size: 20px;
+    width: 300px;
+    background-color: aliceblue;
+    font-family: 'Playfair Display', serif;
+}
+
+#item-6{
+    background-image: url("https://i.imgur.com/xqfBTiJ.jpg");
+    background-position: center;
 }
