@@ -26,7 +26,7 @@ function Login({setIsLoggedIn, loggedIn, setUser}) {
 
   useEffect(() => {
     if (localStorage.token) {
-        navigate('/Profile')
+        navigate('/account')
     }
 }, [loggedIn])
 

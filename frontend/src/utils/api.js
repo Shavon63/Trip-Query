@@ -18,7 +18,7 @@ export async function formSubmit(formData) {
 // get user data if user is logged in
 export async function logIn(formData) {
     // hit the user show route
-    const { data } = await axios.post('/users/login/', formData)
+    const { data } = await axios.post('/users/login', formData)
     return data
 }
 
@@ -30,7 +30,7 @@ export async function getUserData() {
 }
 
 export async function deleteUsers() {
-    const {data} = await axios.delete('/', config)
+    const {data} = await axios.delete('/users/', config)
     return data
 }
 

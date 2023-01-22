@@ -3,8 +3,9 @@ import { deleteUsers, updateUser } from "../../utils/api"
 import axios from "axios";
 import "./profile.css"
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export default function Account(props){
+export default function Account(props, user){
     const [showForm, setShowForm] = useState(false)
     const [formData, setFormData] = useState({
         fullname: " ",
@@ -44,16 +45,19 @@ export default function Account(props){
     })
     }
 
-   
 
   
 
     return (
-        <div className="container-holder" >
+        <motion.div className="container-holder" 
+        animate={{y: 0}} 
+        initial={{y:-900}}
+        transition={{type: "tween", duration: 2 }}
+        >
                 <div className="container">
                     <div className="user-info">
                         <h1 className="user-name">Welcome {props.user.username}</h1>
-                        <h2>Would You Like To Explore {props.user.location}</h2>
+                        <h2>Let's Explore {props.user.location} Together</h2>
                         <div className="button-container">
                         <button className="button-item" onClick={toggleEditForm}>Update User Info</button>
                         <button className="deleteBtn" onClick={deleteUser} > Delete Account</button>
@@ -63,7 +67,7 @@ export default function Account(props){
                         showForm ?
                     <form className="account-form" onSubmit={handleSubmit}>
                         <div className="input-texts">
-                                <label htmlFor='fullname'></label>
+                                <label htmlFor='fullname'>Full Name</label>
                                 <input
                                     type='text'
                                     name='fullname'
@@ -73,7 +77,7 @@ export default function Account(props){
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='username'></label>
+                                <label htmlFor='username'>Username</label>
                                 <input
                                     type='text'
                                     name='username'
@@ -83,7 +87,7 @@ export default function Account(props){
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='password'></label>
+                                <label htmlFor='password'>Password</label>
                                 <input
                                     type='text'
                                     name='password'
@@ -94,7 +98,7 @@ export default function Account(props){
                             </div>
             
                             <div className="input-texts">
-                                <label htmlFor='location'></label>
+                                <label htmlFor='location'>Location</label>
                                 <input
                                     placeholder = "Location"
                                     type='text'
@@ -109,6 +113,6 @@ export default function Account(props){
                 }
                 
                 </div>
-        </div>
+        </motion.div>
     )
 }
