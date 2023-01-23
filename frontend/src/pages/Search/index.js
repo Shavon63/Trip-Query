@@ -8,7 +8,7 @@ const Search = () => {
 
     const [searchedPlace, setSearchedPlace] = useState([])
     const [formData, setFormData] = useState({searchString: ""})
-console.log(searchedPlace)
+    
     return (
       <div className="gallery">
         <div className="search-container">
