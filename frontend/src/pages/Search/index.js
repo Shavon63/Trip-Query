@@ -8,20 +8,28 @@ const Search = () => {
 
     const [searchedPlace, setSearchedPlace] = useState([])
     const [formData, setFormData] = useState({searchString: ""})
-
+console.log(searchedPlace)
     return (
       <div className="gallery">
+        <div className="search-container">
         <SearchForm formData={formData} setFormData={setFormData} setSearchedPlace={setSearchedPlace}/>
        {searchedPlace.map((searched, i) => (
   <figure key={searched.id} className="searched-results">
+   <img src={searched.photos.photo_reference} />
 
 
     <figcaption className="search">
-        <h3>{searched.description} {searched.type}</h3>
+      <h3>{searched.name}</h3>
+      <h3>{searched.formatted_address}</h3>
+      <h4>{searched.rating}</h4>
+      <h5>{searched.geometry.location.lat}{searched.geometry.location.lng}</h5>
+
+        
     </figcaption>
   </figure>
 ))}
 
+      </div>
       </div>
     )
   }

@@ -1,12 +1,18 @@
 .search{
     background-color: white;
-    width: 400px;
-    margin: 0 auto;
+    width: 500px;
+    margin: auto;
     margin-top: 0;
     box-shadow: 5px 5px 5px white;
+    overflow-y: scroll;
+
 }
 
 .gallery{
     background-color: black;
+    margin: auto;
   
+}
+.search-container{
+    margin: auto;
 }

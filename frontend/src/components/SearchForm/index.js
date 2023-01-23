@@ -18,8 +18,7 @@ import axios from 'axios';
         async function handleSubmit(event) {
             event.preventDefault();
             const {data} = await axios.post('/maps', formData)
-            setSearchedPlace(data.predictions)
-            console.log(data)
+            setSearchedPlace(data.candidates)
       
         
 
