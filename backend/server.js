@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
 });
 
 app.post("/maps", async (req, res)=> {
-    const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=${req.body.searchString}&types=establishment&location=40.76999,-74.44696&radius=500&key=AIzaSyBPFyfOvU96xoIgsYr5aN-ANWB-qihk2Uo`)
+    const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${req.body.searchString}&types=establishment&location=40.76999,-74.44696&radius=500&key=AIzaSyBPFyfOvU96xoIgsYr5aN-ANWB-qihk2Uo`)
     console.log(req.body)
     res.json(data)
 })

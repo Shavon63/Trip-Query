@@ -7,8 +7,7 @@ import "./maps.css"
 
 
 export default function Maps(){
-    
-   
+
 // use memo is like a useEffect, it generates a value once and then continue using it unless something changes 
 // if i was to use a useEffect the value would only be useable inside the useEffect.
     const center = useMemo(()=>({lat: 40.6, lng: -73.5}), []);
@@ -20,6 +19,7 @@ export default function Maps(){
         clickableIcons: false,
 
     }),[])
+
     // is the reference to the current State of the map useable in a variable 
     const mapRef = useRef()
     // react function call back to create a function that can transfer data
@@ -31,19 +31,17 @@ export default function Maps(){
         <div className="container-map">
             <div className="controls">
                 <h1 className="commute">commute?</h1>
-                {/* more than updating a certain position this will move the map to that state */}
-                <Places setLocation={(position)=>{
-                    setLocation(position)
-                    mapRef.current?.panTo(position)
-                }}/>
-            </div>
+                <Places/>
+            </div> 
             <div className="map">
                 <GoogleMapReact 
                 zoom={10} 
                 center={center} 
                 mapContainerClassName="map-container"
                 options={options}
-                loaded={loaded}>
+                loaded={loaded}
+                >
+            
                 </GoogleMapReact>
             </div>
             

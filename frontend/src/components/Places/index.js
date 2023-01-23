@@ -1,26 +1,46 @@
-// import usePlacesAutoComplete, {getGeocode, getLatLng} from "react-google-places-autocomplete"
-// import React, { useRef } from "react";
+import PlacesAutocomplete, { geocodeByAddress, geocodeByPlaceId, getLatLng } from "react-places-autocomplete";
+import {useState} from "react"
+import  GoogleMapReact  from "@react-google-maps/api";
 
 
 
-
-   
-
-
-function Places(){
-    // these will be the values we are passing and getting back from our autocomplete searches
-    // example, ready will check if map is ready and value as whats the value searched for
-    // object values in suggestions are status of suggestions and the data is the suggestions
-    // clear suggestions will remove the suggestions after one is chosen
-    // const {ready, value, setValue, suggestions: {status, data}, clearSuggestions}= usePlacesAutoComplete()
+    function Places(){
+        const [address, setAddress] = useState("")
+        const [coordinates, setCoordinates] = useState({
+            lat: null, 
+            lng: null
+        })
     
+        const handleSelect = async value => {
+    
+            
+            //when clicked this google function will run 
+            // finnding the geocode by address wich is all info on address
+            const results = await geocodeByAddress(value)
+            // when selected this function will run after which will get the latlng 
+            // from the item selected
+            const latlong = await getLatLng(results[0])
+            // console.log(results)
+            // console.log(latlong)
+            //setting the address in usestate to the result/vaule of the results function
+            setAddress(value)
+            //setting the coordinnates the results of latlong function 
+            // just passing in latlong as the new vaule.
+            setCoordinates(latlong)
+        }
+    
+        return (
+            <div className="places-container">
+                <p>lat: {coordinates.lat}</p>
+    
+                <p>lat: {coordinates.lng}</p>
+    
+                <p>Address: {address}</p>
+    
+         </div>
+        )}
 
-    return (
-     <div></div>
-    )
-}
 
 export default Places;
-
 
 
