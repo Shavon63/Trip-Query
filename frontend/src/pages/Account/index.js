@@ -23,16 +23,13 @@ export default function Account(props){
     function handleChange(event){
         setFormData({...formData, [event.target.name]: event.target.value} )
     }
-    let garbage = 44
     
     function deleteUser() {
         deleteUsers()
-        .then((data)=>{ 
-            garbage = data
             localStorage.clear()
             props.setIsLoggedIn(false)
             navigate("/")
-        })
+        
     } 
     function handleSubmit(event){
         event.preventDefault()
