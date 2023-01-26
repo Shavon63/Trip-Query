@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 export default function Account(props){
     const [showForm, setShowForm] = useState(false)
     const [formData, setFormData] = useState({
-        fullname: " ",
-        username: " ",
-        password: " ",
-        location: " "
+        fullname: "",
+        username: "",
+        password: "",
+        location: ""
 
     })
     const [userInfo, setUserInfo] = useState(props.user)
@@ -83,8 +83,8 @@ export default function Account(props){
                             <div className="input-texts">
                                 <label htmlFor="password">Password</label>
                                 <input
-                                    type='password'
-                                    name='password'
+                                    type="password"
+                                    name="password"
                                     placeholder="password"
                                     onChange={handleChange}
                                     value={formData.password}/>
