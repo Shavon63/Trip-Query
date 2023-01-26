@@ -38,9 +38,10 @@ export default function Account(props){
         navigate("/")
 
     }
+
     function handleSubmit(event){
         event.preventDefault()
-        updateUser(props.user.id, formData)
+        updateUser(props.user._id, formData)
         .then((data)=> {
         setUserInfo(data)
         localStorage.token = data.token
@@ -70,7 +71,7 @@ export default function Account(props){
                         showForm ?
                     <form className="account-form" onSubmit={handleSubmit}>
                         <div className="input-texts">
-                                <label htmlFor="fullname">fullname</label>
+                                <label htmlFor="fullname"></label>
                                 <input
                                     type="text"
                                     name="fullname"
@@ -79,7 +80,7 @@ export default function Account(props){
                                     value={formData.fullname}/>
                             </div>
                             <div className="input-texts">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="username"></label>
                                 <input
                                     type="text"
                                     name="username"
@@ -88,7 +89,7 @@ export default function Account(props){
                                     value={formData.username}/>
                             </div>
                             <div className="input-texts">
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password"></label>
                                 <input
                                     type="password"
                                     name="password"
@@ -98,7 +99,7 @@ export default function Account(props){
                             </div>
             
                             <div className="input-texts">
-                                <label htmlFor='location'>Location</label>
+                                <label htmlFor='location'></label>
                                 <input
                                     type="text"
                                     name="location"

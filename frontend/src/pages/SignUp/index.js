@@ -97,22 +97,6 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
                         <label className="form-label" htmlFor="location"></label>
                     </div>
 
-                    {/* <!-- 2 column grid layout for inline styling --> */}
-                    <div className="row mb-4">
-                        <div className="col d-flex justify-content-center">
-                        {/* <!-- Checkbox --> */}
-                        <div className="form-check">
-                            <input className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="form2Example31" 
-                            checked />
-                            <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
-                        </div>
-                        </div>
-
-                    </div>
-
                     {/* <!-- Submit button --> */}
                     <button type="submit" className="btn btn-primary btn-block mb-4" onClick={motionButton}>Sign up</button>
 

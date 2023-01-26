@@ -14,7 +14,7 @@ const Search = () => {
         <div className="search-container">
         <SearchForm formData={formData} setFormData={setFormData} setSearchedPlace={setSearchedPlace}/>
        {searchedPlace.map((searched, i) => (
-  <figure key={searched.id} className="searched-results">
+  <figure key={i} className="searched-results">
 <img src={searched.photos.photos_reference} />
 
 
