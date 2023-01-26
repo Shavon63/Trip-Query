@@ -15,26 +15,25 @@ ul{
     list-style: none;
     display: flex;
     justify-content: right;
+    
 
 }
-.nav-item {
+#nav-item {
     display: inline;
-    margin-right: 20px;
+    margin-right: 40px;
     text-align: center;
     border: red solid 3px;
     border-radius: 5px;
     height: 25px;
     width: 75px;
-    font-size: 20px;
+    size: 10px;
     
 }
 .delete-button{
     background-color: red;
 }
 
-Link{
-    width: 600px
-}
+
 
 @media (max-width: 500px) {
     .nav-container{
@@ -42,7 +41,7 @@ Link{
         height: 100px;
         margin: auto;
     }
-    .nav-item{
+    #nav-item{
         width: 20px;
         position: relative;
         font-size: 14px;
@@ -55,7 +54,7 @@ Link{
         width: 80%;
         margin: auto;
     }
-    .nav-item{
+    #nav-item{
         width: 25px;
         position: relative;
         font-size: 20px;
@@ -68,7 +67,7 @@ Link{
         width: 90%;
         margin: auto;
     }
-    .nav-item{
+    #nav-item{
         width: 30px;
         position: relative;
         font-size: 30px;

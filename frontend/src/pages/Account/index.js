@@ -43,10 +43,8 @@ export default function Account(props){
         event.preventDefault()
         updateUser(props.user._id, formData)
         .then((data)=> {
-        props.setUser(data)
+        props.setUser(data.user)
         setShowForm(false)
-        console.log(props.user.username)
-        
     })
     }
 

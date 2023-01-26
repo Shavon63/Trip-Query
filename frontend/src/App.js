@@ -26,7 +26,7 @@ function App() {
         setIsLoggedIn(true)
         getUserData()
         .then((data) => {
-          setUser(data)
+          setUser(data.user)
         })
     }
 }, [])

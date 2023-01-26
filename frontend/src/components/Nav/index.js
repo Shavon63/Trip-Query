@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import "./main.css"
+import "./nav.css"
 
 
 
 export default function Nav(props) {
     // state declaration: build JSX array of NavBar items
-    const initialState = [<Link to='/'><li className='nav-item' key='1'>Home</li></Link>]
+    const initialState = [<li className='nav-item' key='1'><Link id='nav-item'to='/'>Home</Link></li>]
     const [navItems, setNavItems] = useState(initialState)
     const [sendHome, setSendHome] = useState(false)
     
@@ -37,16 +37,16 @@ export default function Nav(props) {
     useEffect(() => {
         if (props.loggedIn) {
             setNavItems(initialState.concat(
-                <Link to='/Map'><li className='nav-item' key='2'>Map</li></Link>,
-                <Link to='/search'><li className='nav-item' key='3'>Search</li></Link>,
-                <Link to='/account'><li className='nav-item' key='4'>Account</li></Link>,
+                <li className='nav-item' key='2'><Link id='nav-item'to='/Map'>Map</Link></li>,
+                <li className='nav-item' key='3'><Link id='nav-item'to='/search'>Search</Link></li>,
+                <li className='nav-item' key='4'><Link id='nav-item'to='/account'>Account</Link></li>,
                <button className="delete-button" onClick={handleLogOut}><li key='5'>Log Out</li></button>,
             ))
         } else {
             setNavItems(initialState.concat([
-                <Link to='/signup'><li className='nav-item' key='6'>Sign Up</li></Link>,
-                <Link to='/login'><li className='nav-item' key='7'>Log In</li></Link>,
-                <Link to='/search'><li className='nav-item' key='8'>Search</li></Link>
+                <li className='nav-item' key='6'><Link id='nav-item'to='/signup'>Sign Up</Link></li>,
+                <li className='nav-item' key='7'><Link id='nav-item'to='/login'>Log In</Link></li>,
+                <li className='nav-item' key='8'><Link id='nav-item'to='/search'>Search</Link></li>
             ]))
         }
     }, [props.loggedIn])
@@ -55,7 +55,7 @@ export default function Nav(props) {
     return (
         <nav className='nav-container'>
             <div className="nav-wrapper">
-                <Link to="/" className="brand-logo">Travel Query</Link>
+                <Link id='nav-item'to="/" className="brand-logo">Travel Query</Link>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     {navItems}
                 </ul>
