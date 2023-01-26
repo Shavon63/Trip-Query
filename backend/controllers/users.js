@@ -13,7 +13,7 @@ const User = db.User
 //ROUTES 
 
 router.post('/signup', async (req, res) => {
-    const foundUser = await db.User.findOne({ username: req.body.username})
+    const foundUser = await User.findOne({ username: req.body.username})
     console.log(foundUser)
     if(!foundUser){
         const createdUser = await User.create(req.body)
@@ -30,7 +30,7 @@ router.post('/signup', async (req, res) => {
   })
 
 router.post('/login', async (req, res) => {
-    const foundUser = await db.User.findOne({ username: req.body.username })
+    const foundUser = await User.findOne({ username: req.body.username })
     if (foundUser && foundUser.password === req.body.password) {
         const payload = {id: foundUser.id}
         const token = jwt.encode(payload, config.jwtSecret)
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
 
 router.put('/:id', async (req, res) => {
-    const updateUser = await db.User.findByIdAndUpdate(
+    const updateUser = await User.findByIdAndUpdate(
         req.params.id,  
         req.body,
         {new: true}
@@ -61,14 +61,14 @@ router.put('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
     const token = req.headers.authorization
     const decode = jwt.decode(token, config.jwtSecret)
-    const foundUser = await db.User.findById(decode.id)
+    const foundUser = await User.findById(decode.id)
     res.json(foundUser)
   })
 
 router.delete('/', async (req, res) => {
     const token = req.headers.authorization
     const decode = jwt.decode(token, config.jwtSecret)
-    await db.User.findByIdAndDelete(decode.id)
+    await User.findByIdAndDelete(decode.id)
     res.json({status: 200})
 });
 

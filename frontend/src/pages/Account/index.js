@@ -66,40 +66,39 @@ export default function Account(props){
                         showForm ?
                     <form className="account-form" onSubmit={handleSubmit}>
                         <div className="input-texts">
-                                <label htmlFor='fullname'></label>
+                                <label htmlFor='fullname'>fullname</label>
                                 <input
                                     type='text'
                                     name='fullname'
                                     onChange={handleChange}
                                     value={formData.fullname}
-                                    placeholder='Full Name'
+                                    
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='username'></label>
+                                <label htmlFor='username'>Username</label>
                                 <input
                                     type='text'
                                     name='username'
                                     onChange={handleChange}
                                     value={formData.username} 
-                                    placeholder="Username"
+                                    
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='password'></label>
+                                <label htmlFor='password'>Password</label>
                                 <input
                                     type='text'
                                     name='password'
                                     onChange={handleChange}
                                     value={formData.password}
-                                    placeholder="Password"
+                                    
                                     />
                             </div>
             
                             <div className="input-texts">
-                                <label htmlFor='location'></label>
+                                <label htmlFor='location'>Location</label>
                                 <input
-                                    placeholder = "Location"
                                     type='text'
                                     name='location'
                                     onChange={handleChange}
