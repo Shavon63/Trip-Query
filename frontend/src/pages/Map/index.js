@@ -8,7 +8,7 @@ export default function Map(){
     // google maps using key
     const {isLoaded} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
-        // libraries: ["places"]
+        libraries: ["places"]
     })
     // while waiting for information to be loaded 
     // loading ... will show 
