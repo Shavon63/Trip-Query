@@ -33,7 +33,7 @@ export default function Account(props){
     } 
     function handleSubmit(event){
         event.preventDefault()
-        updateUser(props.user._id, formData)
+        updateUser(props.user.id, formData)
         .then((data)=> {
         setUserInfo(data)
         localStorage.token = data.token
