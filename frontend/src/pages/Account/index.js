@@ -3,6 +3,7 @@ import { deleteUsers, updateUser } from "../../utils/api"
 import "./profile.css"
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 export default function Account(props){
     const [showForm, setShowForm] = useState(false)
@@ -24,13 +25,19 @@ export default function Account(props){
         setFormData({...formData, [event.target.name]: event.target.value} )
     }
     
-    function deleteUser() {
-        deleteUsers()
-            localStorage.clear()
-            props.setIsLoggedIn(false)
-            navigate("/")
+    async function deleteUser() {
         
-    } 
+        const config = {
+            headers:{
+                'Authorization': localStorage.getItem('token')
+            }
+        };
+        await axios.delete('/users', config)
+        localStorage.clear()
+        props.setIsLoggedIn (false)
+        navigate("/")
+
+    }
     function handleSubmit(event){
         event.preventDefault()
         updateUser(props.user.id, formData)

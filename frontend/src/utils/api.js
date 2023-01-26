@@ -29,10 +29,7 @@ export async function getUserData() {
     return data
 }
 
-export async function deleteUsers() {
-    const {data} = await axios.delete('/users', config)
-    return data
-}
+
 
 export async function updateUser(userId, formData){
     const { data } = await axios.put('/users/' + userId, formData)
