@@ -23,14 +23,10 @@ function Login({setIsLoggedIn, loggedIn, setUser}) {
       setUser(data.user)
 
   })
-    
+  navigate('/account')
   };
 
-  useEffect(() => {
-    if (localStorage.token) {
-        navigate('/account')
-    }
-}, [loggedIn])
+
 
   
   // Note that we need to use `htmlFor` instead of `for` in JSX
