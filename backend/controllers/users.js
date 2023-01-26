@@ -24,7 +24,7 @@ router.post('/signup', async (req, res) => {
             token: token
         })
     } else {
-        alert("user already exists")
+    
         res.sendStatus(401)
     }
   })
@@ -39,7 +39,6 @@ router.post('/login', async (req, res) => {
             user: foundUser
         })
     } else {
-        alert("user not found")
       res.sendStatus(401)
     }
 })
