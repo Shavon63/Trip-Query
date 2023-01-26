@@ -85,7 +85,7 @@ export default function Account(props){
                             <div className="input-texts">
                                 <label htmlFor='password'>Password</label>
                                 <input
-                                    type='text'
+                                    type='password'
                                     id='password'
                                     onChange={handleChange}
                                     value={formData.password}
