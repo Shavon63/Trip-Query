@@ -1,6 +1,6 @@
 import {useLoadScript} from "@react-google-maps/api"
 import MapsFrame from "../../components/MapsFrame"
-import Places from "../../components/Places"
+
 
 
 export default function Map(){

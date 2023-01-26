@@ -1,8 +1,6 @@
 import {useState, useMemo, useCallback, useRef} from "react"
 import GoogleMapReact from 'google-map-react'
 import React from "react"
-import Places from "../Places"
-import Distances from "../Distances"
 import "./maps.css"
 
 
@@ -30,8 +28,6 @@ export default function Maps(){
     return(
         <div className="container-map">
             <div className="controls">
-                <h1 className="commute">commute?</h1>
-                <Places/>
             </div> 
             <div className="map">
                 <GoogleMapReact 
