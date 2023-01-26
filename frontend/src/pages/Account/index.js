@@ -21,7 +21,7 @@ export default function Account(props){
         setShowForm(!showForm)
     }
     function handleChange(event){
-        setFormData({...formData, [event.target.name]: event.target.value} )
+        setFormData({...formData, [event.target.id]: event.target.value} )
     }
     
     function deleteUser() {
@@ -33,12 +33,12 @@ export default function Account(props){
     } 
     function handleSubmit(event){
         event.preventDefault()
-        updateUser(props.user._id, formData)
+        updateUser(props.user.id, formData)
         .then((data)=> {
         setUserInfo(data)
-        localStorage.token = data.token
-        setShowForm(false)
     })
+    localStorage.token = data.token
+    setShowForm(false)
     }
 
 
@@ -63,20 +63,20 @@ export default function Account(props){
                         showForm ?
                     <form className="account-form" onSubmit={handleSubmit}>
                         <div className="input-texts">
-                                <label htmlFor='fullname'>fullname</label>
+                                <label htmlFor="fullname">fullname</label>
                                 <input
-                                    type='text'
-                                    name='fullname'
+                                    type="text"
+                                    id="fullname"
                                     onChange={handleChange}
                                     value={formData.fullname}
                                     
                                     />
                             </div>
                             <div className="input-texts">
-                                <label htmlFor='username'>Username</label>
+                                <label htmlFor="username">Username</label>
                                 <input
-                                    type='text'
-                                    name='username'
+                                    type="text"
+                                    id="username"
                                     onChange={handleChange}
                                     value={formData.username} 
                                     
@@ -86,7 +86,7 @@ export default function Account(props){
                                 <label htmlFor='password'>Password</label>
                                 <input
                                     type='text'
-                                    name='password'
+                                    id='password'
                                     onChange={handleChange}
                                     value={formData.password}
                                     
@@ -96,8 +96,8 @@ export default function Account(props){
                             <div className="input-texts">
                                 <label htmlFor='location'>Location</label>
                                 <input
-                                    type='text'
-                                    name='location'
+                                    type="text"
+                                    id="location"
                                     onChange={handleChange}
                                     value={formData.location}
                                     
