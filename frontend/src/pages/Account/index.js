@@ -24,13 +24,18 @@ export default function Account(props){
         setFormData({...formData, [event.target.name]: event.target.value} )
     }
     
-    function deleteUser() {
-        deleteUsers()
-            localStorage.clear()
-            props.setIsLoggedIn(false)
-            navigate("/")
+    async function deleteUser() {
         
-    } 
+        const config = {
+            headers:{
+                'Authorization': localStorage.getItem('token')
+            }
+        };
+        await axios.delete('/users', config)
+        localStorage.clear()
+        props.setIsLoggedIn (false)
+
+    }
     function handleSubmit(event){
         event.preventDefault()
         updateUser(props.user.id, formData)
