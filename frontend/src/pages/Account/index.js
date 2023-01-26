@@ -94,7 +94,7 @@ export default function Account(props){
                                 <label htmlFor='location'>Location</label>
                                 <input
                                     type="text"
-                                    id="location"
+                                    name="location"
                                     placeholder="location"
                                     onChange={handleChange}
                                     value={formData.location}/>
