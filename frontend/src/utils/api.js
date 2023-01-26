@@ -30,7 +30,7 @@ export async function getUserData() {
 }
 
 export async function deleteUsers() {
-    const {data} = await axios.delete('/users/', config)
+    const {data} = await axios.delete('/users', config)
     return data
 }
 
