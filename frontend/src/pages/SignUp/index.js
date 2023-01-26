@@ -26,7 +26,6 @@ export default function SignUpForm({setIsLoggedIn, setUser}) {
         async function handleSubmit(event) {
             event.preventDefault()
             formSubmit(formState).then((data => {
-                setUser(data)
                 localStorage.token = data.token
                 setIsLoggedIn(true)
 

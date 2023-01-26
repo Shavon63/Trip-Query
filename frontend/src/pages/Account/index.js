@@ -44,7 +44,6 @@ export default function Account(props){
         updateUser(props.user._id, formData)
         .then((data)=> {
         setUserInfo(data)
-        localStorage.token = data.token
         setShowForm(false)
         
     })
