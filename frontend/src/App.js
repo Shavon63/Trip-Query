@@ -29,7 +29,7 @@ function App() {
           setUser(data)
         })
     }
-}, [localStorage.token])
+}, [])
 
 
   return (
