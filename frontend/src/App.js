@@ -26,10 +26,10 @@ function App() {
         setIsLoggedIn(true)
         getUserData()
         .then((data) => {
-          setUser(data.user)
+          setUser(data)
         })
     }
-}, [])
+}, [localStorage.token])
 
 
   return (
@@ -41,7 +41,7 @@ function App() {
         <Route path="/login" element={<Login loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
         <Route path="/search" element ={<Search/>} />
         <Route path="/map" element ={<Map/>} />
-        <Route path="/account" element ={<Account user={user} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/account" element ={<Account user={user} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
 
         <Route path="/*" element={<Error/>}/>
 

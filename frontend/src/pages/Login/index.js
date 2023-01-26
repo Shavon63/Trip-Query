@@ -20,7 +20,7 @@ function Login({setIsLoggedIn, loggedIn, setUser}) {
     .then((data) => {
       localStorage.token = data.token
       setIsLoggedIn(true)
-      setUser(data.user)
+      setUser(data)
 
   })
   navigate('/account')
