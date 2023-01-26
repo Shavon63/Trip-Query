@@ -36,11 +36,11 @@ function App() {
     <div className="App">
       <Nav loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} />
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/signup" element={<SignUpForm loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/" element={<Home loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/signup" element={<SignUpForm loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
         <Route path="/login" element={<Login loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
-        <Route path="/search" element ={<Search/>} />
-        <Route path="/map" element ={<Map/>} />
+        <Route path="/search" element ={<Search loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route path="/map" element ={<Map loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path="/account" element ={<Account user={user} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
 
         <Route path="/*" element={<Error/>}/>
