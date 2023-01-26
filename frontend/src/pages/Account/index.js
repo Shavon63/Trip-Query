@@ -14,7 +14,7 @@ export default function Account(props){
         location: ""
 
     })
-    const [userInfo, setUserInfo] = useState(props.user)
+    const [userInfo, setUserInfo] = useState()
     const navigate= useNavigate()
 
 
@@ -45,6 +45,7 @@ export default function Account(props){
         .then((data)=> {
         setUserInfo(data)
         setShowForm(false)
+        console.log(props.user.username)
         
     })
     }
