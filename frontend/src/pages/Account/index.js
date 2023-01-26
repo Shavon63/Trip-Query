@@ -48,7 +48,6 @@ export default function Account(props){
         
     })
     }
-console.log(props.user.username)
 
   
 
