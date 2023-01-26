@@ -46,9 +46,10 @@ export default function Account(props){
         setUserInfo(data)
         localStorage.token = data.token
         setShowForm(false)
+        
     })
     }
-
+console.log(props.user.username)
 
   
 

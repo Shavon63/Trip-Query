@@ -4,7 +4,7 @@ import { formSubmit } from '../../utils/api';
 import { motion } from 'framer-motion';
 import './signup.css';
 
-export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
+export default function SignUpForm({setIsLoggedIn, setUser}) {
     // state declarations
     const initialState = {
         fullname: "",
@@ -26,6 +26,7 @@ export default function SignUpForm({setIsLoggedIn, isLoggedIn, getUserData}) {
         async function handleSubmit(event) {
             event.preventDefault()
             formSubmit(formState).then((data => {
+                setUser(data)
                 localStorage.token = data.token
                 setIsLoggedIn(true)
 
